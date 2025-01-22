@@ -1,0 +1,4 @@
+azure-storage-blob
+line-bot-sdk
+Pillow
+python-dotenv
