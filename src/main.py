@@ -2,7 +2,7 @@ from uniq_name import uniq_name
 from capture import capture_photo
 from thumbnail import create_thumbnail
 from upload_photo import upload_photo_to_azure
-from send_photo import send_photo_via_line
+from post_photo import post_photo_via_line
 
 # LINE投稿の撮影データのサムネイルサイズ
 thumbnail_size = (240, 240)
@@ -24,7 +24,7 @@ def main():
     upload_photo_to_azure(thumbnail_path)
 
     # LINE へ投稿する
-    send_photo_via_line(photo_path, thumbnail_path)
+    post_photo_via_line(photo_path, thumbnail_path)
 
 if __name__ == "__main__":
     main()

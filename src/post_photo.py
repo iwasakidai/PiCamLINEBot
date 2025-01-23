@@ -10,7 +10,7 @@ from linebot.v3.messaging.models.broadcast_request import BroadcastRequest
 from pprint import pprint
 import config
 
-def send_photo_via_line(photo_path, thumbnail_path):
+def post_photo_via_line(photo_path, thumbnail_path):
     """
     LINE Messaging API(Broadcast)を使ってメッセージと写真を投稿する
 
@@ -61,7 +61,7 @@ def send_photo_via_line(photo_path, thumbnail_path):
 def main():
     photo_path = "sample.jpg"
     thumbnail_path = photo_path.replace(".jpg", "_thumbnail.jpg")
-    send_photo_via_line(photo_path, thumbnail_path)
+    post_photo_via_line(photo_path, thumbnail_path)
 
 if __name__ == "__main__":
     main()
