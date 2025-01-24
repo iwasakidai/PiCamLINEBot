@@ -3,7 +3,7 @@ import logging
 from uniq_name import uniq_name
 from capture import capture_photo
 from thumbnail import create_thumbnail
-from upload_photo import upload_photo_to_azure
+from upload_file import upload_file_to_azure
 from post_photo import post_photo_via_line
 from set_logging import file_handler, console_handler
 
@@ -50,8 +50,8 @@ def main():
 
     # 撮影データ、サムネイルを Azure blob へアップロード
     logger.debug('Azure blob へアップロード開始')
-    upload_photo_to_azure(photo_path)
-    upload_photo_to_azure(thumbnail_path)
+    upload_file_to_azure(photo_path)
+    upload_file_to_azure(thumbnail_path)
     logger.debug('Azure blob へアップロード終了')
 
     # LINE へ投稿する

@@ -8,6 +8,7 @@ from linebot.v3.messaging import (
 )
 from linebot.v3.messaging.models.broadcast_request import BroadcastRequest
 from pprint import pprint
+import os
 import config
 
 def post_photo_via_line(photo_path, thumbnail_path):
@@ -31,8 +32,8 @@ def post_photo_via_line(photo_path, thumbnail_path):
         raise FileNotFoundError("Photo or thumbnail file not found.")
     
     # 投稿する画像のURL
-    photo_url = image_url.format(photo_path)
-    thumbnail_url = image_url.format(thumbnail_path)
+    photo_url = image_url.format(os.path.basename(photo_path))
+    thumbnail_url = image_url.format(os.path.basename(thumbnail_path))
 
     # メッセージ構築
     messages = [
