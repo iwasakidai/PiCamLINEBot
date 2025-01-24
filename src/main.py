@@ -34,8 +34,8 @@ def main():
     # ユニークなファイル名の設定
     logger.debug('ユニークなファイル名の設定開始')
     basename = uniq_name()
-    photo_path = "/".join(DATA, basename + ".jpg")
-    thumbnail_path = "/".join(DATA, basename + "s.jpg")
+    photo_path = "/".join([DATA, basename + ".jpg"])
+    thumbnail_path = "/".join([DATA, basename + "s.jpg"])
     logger.debug('ユニークなファイル名の設定終了')
 
     # 撮影してデータを photo_path へ格納する
