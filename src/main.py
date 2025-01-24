@@ -10,7 +10,7 @@ from set_logging import file_handler, console_handler
 # LINE投稿の撮影データのサムネイルサイズ
 thumbnail_size = (240, 240)
 # 撮影データの格納場所
-DATA = "data/"
+DATA = "data"
 
 def main():
     # ロガーの取得
@@ -34,8 +34,8 @@ def main():
     # ユニークなファイル名の設定
     logger.debug('ユニークなファイル名の設定開始')
     basename = uniq_name()
-    photo_path = "/".join([DATA, basename + ".jpg"])
-    thumbnail_path = "/".join([DATA, basename + "s.jpg"])
+    photo_path = os.path.join(DATA, basename + ".jpg")
+    thumbnail_path = os.path.join(DATA, basename + "s.jpg")
     logger.debug('ユニークなファイル名の設定終了')
 
     # 撮影してデータを photo_path へ格納する
